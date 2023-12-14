@@ -1,16 +1,31 @@
-import React from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+function BasicExample() {
   return (
-    <div>
-      <Link
-        to="/HeroSection"
-        style={{ color: "darkgrey", textDecoration: "none" }}
-      >
-        <h1>HeroSection</h1>
-      </Link>
-      <h1>Header</h1>
-    </div>
+    <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand>
+          <Link to="/" className="Navbar-title">
+            <h2>React-Bootstrap</h2>
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mx-auto Navbar-section">
+            <Link className="Navbar-element" to="/HeroSection">
+              <h4>HeroSection</h4>
+            </Link>
+            <Link className="Navbar-element" to="/Contact">
+              <h4>Contact</h4>
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
+
+export default BasicExample;
